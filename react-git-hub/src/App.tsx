@@ -9,6 +9,12 @@ import { Input } from "./components/input";
 import { Button } from "./components/button";
 
 function App() {
+  const [user, setUser] = React.useState('');
+
+  const searchUser = ()=>{
+    console.log(user)
+  }
+
   return (
     <div className="App">
       <Header>
@@ -19,8 +25,8 @@ function App() {
       </Header>
       <Body>
         <ContainerFlex>
-          <Input></Input>
-          <Button>Procurar</Button>
+          <Input onChange={(e: React.ChangeEvent<HTMLInputElement>)=> setUser(e.target.value)}></Input>
+          <Button onClick={()=>searchUser()}>Procurar</Button>
         </ContainerFlex>
       </Body>
     </div>
