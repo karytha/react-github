@@ -7,6 +7,7 @@ import { Text } from "./components/text";
 import { ContainerFlex } from "./components/container";
 import { Input } from "./components/input";
 import { Button } from "./components/button";
+import { Label } from "./components/label";
 
 function App() {
   const [user, setUser] = React.useState('');
@@ -24,6 +25,7 @@ function App() {
         </ContainerFlex>
       </Header>
       <Body>
+      <Label> Digite o usuário para achar o repositório </Label>
         <ContainerFlex>
           <Input onChange={(e: React.ChangeEvent<HTMLInputElement>)=> setUser(e.target.value)}></Input>
           <Button onClick={()=>searchUser()}>Procurar</Button>
